@@ -1,7 +1,7 @@
 """
 COMP 163 - Project 1: Character Creator & Saving/Loading
-Name: [Your Name Here]
-Date: [Date]
+Name: [Chase Parker]
+Date: [31/10/25]
 
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
@@ -31,9 +31,36 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
+    booster=2
+    if character_class=="Warrior":
+        strength=(level*10)
+        health=100
+        health_equation=100-(10+strength)
+        magic= (strength+health)/5
+        return strength,int(magic),health_equation
+    elif character_class=="Mage":
+        strength=(level*2)
+        health=100
+        health_equation=100-(25+strength)
+        magic= ((strength+health)*booster)/2
+        return strength,int(magic),health_equation
+    elif character_class=="Rouge":
+        strength=(level*5)
+        health=100
+        health_equation=100-(50+strength)
+        magic= (strength+(health*booster))/4
+        return strength,int(magic),health_equation
+    elif character_class=="Clerics":
+        strength=(level*5)
+        health=100
+        health_equation=100-(25+strength)
+        magic= (strength+health*booster)/2
+        return strength,int(magic),health_equation
+    
+
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
-    pass
+
 
 def save_character(character, filename):
     """
