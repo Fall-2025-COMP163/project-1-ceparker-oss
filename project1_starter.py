@@ -149,7 +149,15 @@ def level_up(character):
     Modifies the character dictionary directly
     Returns: None
     """
-    
+    level=1
+    if character['level']>=1:
+        level+=1
+        character['level']=level
+        character['strength']=character['strength']*level
+        character['magic']=character['magic']*level
+        character['health']=character['health']*level
+        character['gold']=character['gold']*level
+        return character
     # TODO: Implement this function
     # Remember to recalculate stats for the new level
     pass
@@ -160,8 +168,13 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    #char = create_character("TestHero", "Warrior")
-    #display_character(char)
+    char = create_character("TestHero", "Warrior")
+    display_character(char)
+    print('hi')
+    level_up(char)
+    display_character(char)
+    level_up(char)
+    display_character(char)
     #save_character(char, "my_character.txt")
     #loaded = load_character("my_character.txt")
     
