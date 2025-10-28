@@ -132,7 +132,13 @@ def display_character(character):
     Health: 80
     Gold: 100
     """
-
+    print("=== CHARACTER SHEET ===")
+    print((f"Class: {character['chr_class']}"))
+    print(f"Level: {character['level']}")
+    print(f"Strength: {character['strength']}")
+    print(f"Magic: {character['magic']}")
+    print(f"Health: {character['health']}")
+    print(f"Gold: {character['gold']}")
    
     # TODO: Implement this function
     pass
@@ -155,8 +161,8 @@ if __name__ == "__main__":
     
     # Example usage:
     #char = create_character("TestHero", "Warrior")
-    #print(char)
     #display_character(char)
-    #print(save_character(char, "my_character.txt"))
+    #save_character(char, "my_character.txt")
     #loaded = load_character("my_character.txt")
+    
     
