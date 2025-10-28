@@ -6,7 +6,7 @@ Date: [31/10/25]
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
-
+import os
 def calculate_stats(character_class, level):
     """
     Calculates base stats based on class and level
@@ -86,7 +86,19 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
-    
+    with open(filename,'w') as file:
+       file.write(f"Character Name: {character['chr_name']}\n")
+       file.write(f"Class: {character['chr_class']}\n")
+       file.write(f"Level: {character['level']}\n")
+       file.write(f"Strength: {character['strength']}\n")
+       file.write(f"Magic: {character['magic']}\n")
+       file.write(f"Health: {character['health']}\n")
+       file.write(f"Gold: {character['gold']}")
+  
+    if os.path.isfile(filename):
+       return True
+    else:
+       return False
     
 
     # TODO: Implement this function
@@ -139,7 +151,8 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    #char = create_character("TestHero", "Warrior")
+    char = create_character("TestHero", "Warrior")
+    print(char)
     #display_character(char)
-    #save_character(char, "my_character.txt")
+    print(save_character(char, "my_character.txt"))
     #loaded = load_character("my_character.txt")
