@@ -110,6 +110,9 @@ def load_character(filename):
     Loads character from text file
     Returns: character dictionary if successful, None if file not found
     """
+    with open(filename,'r') as file:
+       file_read=file.read()
+       return file_read
     # TODO: Implement this function
     # Remember to handle file not found errors
     
@@ -151,8 +154,9 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    char = create_character("TestHero", "Warrior")
-    print(char)
+    #char = create_character("TestHero", "Warrior")
+    #print(char)
     #display_character(char)
-    print(save_character(char, "my_character.txt"))
+    #print(save_character(char, "my_character.txt"))
     #loaded = load_character("my_character.txt")
+    
