@@ -7,6 +7,13 @@ AI Usage: [Document any AI assistance used]
 I used AI to solve the issues for load character and save character
 Example: AI helped with file I/O error handling logic in save_character function
 """
+# AI USAGE:
+    #I used  Ai to help figure out the issue regarding save and load character
+       #Save- ensuring that the filename was corresponding to an actual argument with a file that exist and told me i forgot to add \n
+       #load- I didn't had load as a dictionary and AI told me to return it as a dictionary (Also was said in instructions)
+       #load- told me to return numeric values in the dictionaries as integers to correspond with their numeric values in create_character
+   #I used AI for line 60 so It didn't return nothing for incorrect values in the character_class and level parameters
+    
 #1 I imported os to check future files, whether it be if they exist or if there actually files
 import os
 #2 Calculate_stats is the first bump of functions, calculating stats based on user input. 
