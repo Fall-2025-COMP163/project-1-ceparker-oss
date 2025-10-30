@@ -7,7 +7,12 @@ AI Usage: [Document any AI assistance used]
 I used AI to solve the issues for load character and save character
 Example: AI helped with file I/O error handling logic in save_character function
 """
+#1 I imported os to check future files, whether it be if they exist or if there actually files
 import os
+#2 Calculate_stats is the first bump of functions, calculating stats based on user input. 
+#Calculate_stats uses the parameter “character_class” to make choices based on your class(Mage,warrior,etc). 
+# This will affect the amount of health you have, the strength you have, etc with you even being able to choose your level.
+#If nothing inputted, it will retruns zero (0,0,0) for the stats instead
 def calculate_stats(character_class, level):
     """
     Calculates base stats based on class and level
@@ -50,7 +55,13 @@ def calculate_stats(character_class, level):
 
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
+#3 This returns a tupule of aspects (strength,int(magic),health_equation) to be used in the future
 
+#4 Create_character is used based severely 
+# on Calculate_stats, returning a dictionary that 
+# will present these stats to the user. 
+# This also shows why those 3 values were returned in the last function, 
+# as they were used for values in our new dictionary.
 def create_character(name, character_class):
     """
     Creates a new character dictionary with calculated stats
@@ -74,7 +85,11 @@ def create_character(name, character_class):
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
     
-
+#5 Save character is used to literally “save” these stats for future reference, 
+# with you first needing to bypass any potential errors, ensuring that the file exists. 
+# After, it saves your information to the file using the parameter filename, 
+# with it being opened up, and your stats will be written in it using the write(“w”) method. 
+# After being written in, it will return True if the newly created file is actually a file.
 def save_character(character, filename):
     """
     Saves character to text file in specific format
@@ -111,7 +126,9 @@ def save_character(character, filename):
     # TODO: Implement this function
     # Remember to handle file errors gracefully
     
-
+#6 Since your status is saved in save_character, 
+# load_character will return in as a dictionary based on what's saved in the file,
+# re-opening the file with these stats to perfectly imported into a new dictionary for your saved file.
 def load_character(filename):
     """
     Loads character from text file
@@ -144,7 +161,9 @@ def load_character(filename):
     # TODO: Implement this function
     # Remember to handle file not found errors
     
-    
+#7 Display_Character is what will print based on in the create_character file,
+#  making it look presentable. It does this by using that returned dictionary 
+# and printing them one by one using indexing to present the full stats. 
 def display_character(character):
     """
     Prints formatted character sheet
@@ -170,7 +189,9 @@ def display_character(character):
    
     # TODO: Implement this function
     pass
-
+#8 This also uses the create_character function, 
+# indexing the returned dictionary to level up your stats when called, 
+# with every level updating your stats more and more. 
 def level_up(character):
     """
     Increases character level and recalculates stats
