@@ -1,0 +1,7 @@
+Character Name: Chase
+Class: Mage
+Level: 1
+Strength: 2
+Magic: 102
+Health: 73
+Gold: 100
