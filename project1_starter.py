@@ -227,11 +227,10 @@ if __name__ == "__main__":
     class_input=input()
     char = create_character(name_input, class_input)
     display_character(char)
-    #level_up(char)
-    #display_character(char)
-    #level_up(char)
+    level_up(char)
     display_character(char)
     save_character(char, "character.txt")
     loaded = load_character("character.txt")
+    print(loaded)
     
     
